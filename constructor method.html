@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>oops Data </title>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <td>name</td>
+                <td>email</td>
+                <td>phone</td>
+            </tr>
+        
+            <tbody id="record">
+        
+            </tbody>
+        
+        </table>
+    </body>
+</html>
+  <script type="text/javascript">
+    
+    let tbl = "";
+
+    class Emp{
+        constructor(name,email,phone){
+            this.name = name;
+            this.email = email;
+            this.phone = phone;
+        }
+        getRecord(){
+
+            tbl += `
+                        <tr>
+                            <td>${this.name}</td>
+                            <td>${this.email}</td>
+                            <td>${this.phone}</td>
+                        </tr>
+                    `
+
+            document.getElementById('record').innerHTML = tbl;
+        }
+    }
+    let data=[
+            {                 
+            name : "jay",
+            email : "jay@gmail.com",
+            phone : "12345"
+            },
+            {
+                name : "ajay",
+                email : "ajay@gmail.com",
+                phone : "12345"
+            },
+            {
+                name : "vijay",
+                email : "vijay@gmail.com",
+                phone : "12345"
+            },
+            {
+                name : "ashish",
+                email : "ashish@gmail.com",
+                phone : "12345"
+            },
+    ]
+
+    let ans = new Emp("jay", "jay@gmail.com", "12345");
+    let ans1 = new Emp("ajay", "ajay@gmail.com", "12345");
+    let ans2 = new Emp("vijay", "vijay@gmail.com", "12345");
+    let ans3 = new Emp("ashish", "ashish@gmail.com", "12345");
+    
+    ans.getRecord();
+    ans1.getRecord();
+    ans2.getRecord();
+    ans3.getRecord();
+
+</script>

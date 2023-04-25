@@ -1,0 +1,57 @@
+<script type="text/javascript">
+    class Student {
+    constructor(phy, chem, bio, math, comp) {
+        this.physics = phy;
+        this.chemistry = chem;
+        this.biology = bio;
+        this.mathematics = math;
+        this.computer = comp;
+    }
+
+    calculatePercentage() {
+        let totalMarks = this.physics + this.chemistry + this.biology + this.mathematics + this.computer;
+        let percentage = (totalMarks / 500) * 100;
+        return percentage;
+    }
+
+    calculateGrade() {
+        const percentage = this.calculatePercentage();
+
+        if (percentage >= 90) {
+            return 'Grade A';
+        } else if (percentage >= 80) {
+            return 'Grade B';
+        } else if (percentage >= 70) {
+            return 'Grade C';
+        } else if (percentage >= 60) {
+            return 'Grade D';
+        } else if (percentage >= 50) {
+            return 'Grade E';
+        } else if (percentage >= 40) {
+            return 'Grade F';
+        } else {
+            return 'Fail';
+        }
+    }
+}
+
+
+var physicsMarks = parseInt(prompt("Enter marks for Physics: "));
+var chemistryMarks = parseInt(prompt("Enter marks for Chemistry: "));
+var biologyMarks = parseInt(prompt("Enter marks for Biology: "));
+var mathematicsMarks = parseInt(prompt("Enter marks for Mathematics: "));
+var computerMarks = parseInt(prompt("Enter marks for Computer: "));
+
+
+let student = new Student(physicsMarks, chemistryMarks, biologyMarks, mathematicsMarks, computerMarks);
+
+
+let percentage = student.calculatePercentage();
+let grade = student.calculateGrade();
+
+
+document.write("<h1>Percentage: " + percentage + "%</h1>");
+document.write("<h1>Grade: " + grade+"</h1>");
+
+
+</script>

@@ -1,0 +1,21 @@
+<script type="text/javascript">
+  class MultiplicationTable {
+  constructor(number) {
+    this.number = number;
+  }
+
+  printTable() {
+    let i = 1;
+    do {
+      document.write("<h1>"+`${this.number} x ${i} = ${this.number * i}`+"</h1>");
+      i++;
+    } while (i <= 10);
+  }
+}
+
+var number = parseInt(prompt("Enter a number to print its multiplication table:"));
+let table = new MultiplicationTable(number);
+document.write("<h1>"+`Multiplication table of ${number}:`+"</h1>");
+table.printTable();
+
+</script>
